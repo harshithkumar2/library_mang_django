@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block title %}
+BOOK | RECORDS
+{% endblock %}
+
+{% block content %}
+<div style="overflow-x:auto;">
+<table class="table table-hover" >
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Book No</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Book taken date</th>
+        <th scope="col">Book submission date</th>
+        <th scope="col">User Id No</th>
+        <th scope="col">Fine(in Rs)</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{i.book_no}}</th>
+      <td>{{i.book_name}}</td>
+        <td>{{i.uname}}</td>
+      <td>{{i.btd}}</td>
+      <td>{{i.bsd}}</td>
+        <td>{{i.uid}}</td>
+        <td>{{i.fine}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+
+{% block title %}
+REGISTERATION
+{% endblock %}
+
+{% block content %}
+<br>
+{% for i in messages %}
+<p style="color:red">{{i}}</p>
+{% endfor %}
+<h3>Registration Form</h3>
+<form action="regdata" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >First Name</label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter First name" name="fname">
+  </div>
+        </div>
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >Last Name</label>
+    <input type="text" class="form-control"  placeholder="Enter Last name" name="lname">
+  </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >Gender</label>
+    <select class="form-control" name="gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+  </div>
+        </div>
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >DOB</label>
+    <input type="date" class="form-control"  name="dob">
+  </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >Email address</label>
+    <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" name="mail">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+        </div>
+        <div class="col-sm-6">
+    <div class="form-group">
+    <label >ID No</label>
+    <input type="text" class="form-control"  placeholder="Enter ID no" name="id">
+  </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >Username</label>
+    <input type="text" class="form-control"   placeholder="Enter Username" name="uname">
+  </div>
+        </div>
+        <div class="col-sm-6">
+  <div class="form-group">
+    <label >Password</label>
+    <input type="password" class="form-control"  placeholder="Enter password" name="pass">
+  </div>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+    <label >Re-Password</label>
+    <input type="password" class="form-control" name="rpass" placeholder="Re enter Password">
+  </div>
+        </div>
+    </div>
+
+  <button type="submit" class="btn btn-raised btn-success">Submit</button>
+</form>
+{% endblock %}

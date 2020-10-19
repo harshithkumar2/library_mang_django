@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block title %}
+LOGIN | HOME
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Register Books</h1>
+{{ user.profile.dob }}
+  {% for msg in messages %}
+  <p style="color:green;">{{msg}}</p>
+  {% endfor %}
+
+  <form  action="bookreg" method="POST">
+    {% csrf_token %}
+<div class="form-group">
+    <label>Book No</label>
+    <input type="number" class="form-control" placeholder="Book no" name="bno">
+  </div>
+    <div class="form-group">
+    <label>Book Name</label>
+    <input type="text" class="form-control" placeholder="Book name" name="bname">
+  </div>
+    <div class="form-group">
+    <label>Book taken date</label>
+    <input type="date" class="form-control" placeholder="Date in yyyy-mm-dd" name="btd">
+  </div>
+    <div class="form-group">
+    <label>Book submission date</label>
+    <input type="date" class="form-control" placeholder="Date in yyyy-mm-dd" name="bsd">
+  </div>
+    <div class="form-group">
+    <label>User Name</label>
+    <input type="text" class="form-control" placeholder="User name" name="uname" >
+  </div>
+    <div class="form-group">
+    <label>User Id Number</label>
+    <input type="number" class="form-control" placeholder="User id" name="uid">
+  </div>
+    <div class="form-group">
+    <label>Fine(if any)</label>
+    <input type="number" class="form-control" placeholder="Fine in Rs" name="fine">
+  </div>
+    <button type="submit" class="btn btn-raised btn-success">Submit</button>
+
+  </form>
+
+
+</div>
+{% endblock %}
