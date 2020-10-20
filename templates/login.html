@@ -7,6 +7,9 @@ LOGIN
 {% block content %}
 <h1 style="text-align:center">LOGIN</h1>
 <br>
+{% for i in messages %}
+<p style="color:green">{{i}}</p>
+{% endfor %}
 <form action="logdata" method="post">
     {% csrf_token %}
   <div class="form-group">

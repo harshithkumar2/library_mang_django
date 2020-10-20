@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block title %}
+PASSWORD | CHANGE
+{% endblock %}
+
+{% block content %}
+<form action="changepass" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+    <label  class="bmd-label-floating">Email address</label>
+    <input type="email" class="form-control" name="mail">
+    <span class="bmd-help">We'll never share your email with anyone else.</span>
+  </div>
+  <div class="form-group">
+    <label class="bmd-label-floating">Password</label>
+    <input type="password" class="form-control" name="pass" >
+  </div>
+    <button type="submit" class="btn btn-raised btn-success">Change Password</button>
+</form>
+{% endblock %}

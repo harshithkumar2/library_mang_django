@@ -14,4 +14,6 @@ path('bookreg', views.book_reg, name='bookreg'),
 path('bookdis', views.book_dis, name='bookdis'),
 path('submit', views.submitted, name='submit'),
 path('bookrec', views.book_rec, name='bookrec'),
+path('changepass_view', views.changepas, name='changepass_view'),
+path('changepass', views.change_pass, name='changepass'),
 ]

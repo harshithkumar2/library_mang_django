@@ -15,6 +15,7 @@ class book_details(models.Model):
     btd = models.DateField()
     bsd = models.DateField(null=True, blank=True)
     uname = models.TextField()
+    email = models.EmailField(null=True)
     uid = models.CharField(max_length=20)
     fine = models.FloatField(null=True, blank=True)
     status = models.BooleanField(default=0)
